@@ -14,9 +14,9 @@ public class ScaleneTriangleTest
 	@Test
 	public void testCreatingScaleneTriangle()
 	{
-		final double side1 = 4.0;
-		final double side2 = 6.0;
-		final double side3 = 11.0;
+		final double side1 = 4.4;
+		final double side2 = 7.3;
+		final double side3 = 9.1;
 		Triangle objectUnderTest = Triangle.create(side1, side2, side3);
 
 		assertScaleneTriangleType(objectUnderTest);
@@ -26,7 +26,7 @@ public class ScaleneTriangleTest
 	public void testOtherSizeScaleneTriangle()
 	{
 		final double side1 = 6.0;
-		final double side2 = 45.0;
+		final double side2 = 12.0;
 		final double side3 = 14.0;
 		Triangle objectUnderTest = Triangle.create(side1, side2, side3);
 

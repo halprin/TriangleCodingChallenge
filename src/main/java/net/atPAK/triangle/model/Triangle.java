@@ -1,5 +1,6 @@
 package net.atPAK.triangle.model;
 
+import net.atPAK.triangle.exceptions.InvalidTriangleException;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.util.Objects;
@@ -139,8 +140,21 @@ public abstract class Triangle
 
 	private static void validateLengths(final double side1, final double side2, final double side3)
 	{
-		//Triangle Inequality Theorem time!
-		//TODO: implement
+		//Triangle Inequality Theorem
+		if(!(side1 + side2 > side3))
+		{
+			throw new InvalidTriangleException(side1, side2, side3);
+		}
+
+		if(!(side1 + side3 > side2))
+		{
+			throw new InvalidTriangleException(side1, side2, side3);
+		}
+
+		if(!(side2 + side3 > side1))
+		{
+			throw new InvalidTriangleException(side1, side2, side3);
+		}
 	}
 
 	private static Triangle createCorrectTriangle(final double side1, final double side2, final double side3)
@@ -164,7 +178,8 @@ public abstract class Triangle
 		}
 		else
 		{
-			//what?
+			//another test for an invalid triangle
+			throw new InvalidTriangleException(side1, side2, side3);
 		}
 
 		return triangle;
