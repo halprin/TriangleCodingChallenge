@@ -9,21 +9,15 @@ public class TriangleMain
 {
 	public static void main(String[] args)
 	{
-		double side1 = 0;
-		double side2 = 0;
-		double side3 = 0;
+		double side1 = 4;
+		double side2 = 6;
+		double side3 = 1;
 
 		if(args.length == 3)
 		{
 			side1 = new Double(args[0]);
 			side2 = new Double(args[1]);
 			side3 = new Double(args[2]);
-		}
-		else
-		{
-			side1 = 4;
-			side2 = 6;
-			side3 = 11;
 		}
 
 		Triangle triangle = Triangle.create(side1, side2, side3);

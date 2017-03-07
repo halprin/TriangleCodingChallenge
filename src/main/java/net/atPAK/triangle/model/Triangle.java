@@ -13,11 +13,23 @@ public abstract class Triangle
 	private double side2;
 	private double side3;
 
+	/**
+	 * The default constructor for Triangle.
+	 *
+	 * This must not be called, hence it being private.
+	 */
 	private Triangle()
 	{
 
 	}
 
+	/**
+	 * The constructor for how triangles are created for now.
+	 *
+	 * @param side1
+	 * @param side2
+	 * @param side3
+	 */
 	protected Triangle(final double side1, final double side2, final double side3)
 	{
 		setSide1(side1);
@@ -25,6 +37,17 @@ public abstract class Triangle
 		setSide3(side3);
 	}
 
+	/**
+	 * The factory method for creating Triangles.
+	 *
+	 * The factory method for creating a Triangle.  By specifying the sizes of the sides, the correct kind of Triangle will be returned.
+	 * Could throw the exception InvalidTriangleException if invalid lengths are specified.
+	 *
+	 * @param side1 The length of the first side of the triangle.
+	 * @param side2 The length of the second side of the triangle.
+	 * @param side3 The length of the third side of the triangle.
+	 * @return Triangle The triangle given the arguments.
+	 */
 	public static Triangle create(final double side1, final double side2, final double side3)
 	{
 		//TODO: create a dumb triangle for now
@@ -38,36 +61,48 @@ public abstract class Triangle
 		};
 	}
 
+	/**
+	 * @return double The length of the first side of the triangle.
+	 */
 	public double getSide1()
 	{
 		return side1;
 	}
 
+	private void setSide1(final double side1)
+	{
+		this.side1 = side1;
+	}
+
+	/**
+	 * @return double The length of the second side of the triangle.
+	 */
 	public double getSide2()
 	{
 		return side2;
 	}
 
+	private void setSide2(final double side2)
+	{
+		this.side2 = side2;
+	}
+
+	/**
+	 * @return double The length of the third side of the triangle.
+	 */
 	public double getSide3()
 	{
 		return side3;
 	}
 
-	public void setSide1(final double side1)
-	{
-		this.side1 = side1;
-	}
-
-	public void setSide2(final double side2)
-	{
-		this.side2 = side2;
-	}
-
-	public void setSide3(final double side3)
+	private void setSide3(final double side3)
 	{
 		this.side3 = side3;
 	}
 
+	/**
+	 * @return TriangleType The type of the triangle.
+	 */
 	public abstract TriangleType getType();
 
 	@Override
