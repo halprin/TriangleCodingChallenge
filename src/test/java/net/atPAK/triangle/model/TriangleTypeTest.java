@@ -25,6 +25,6 @@ public class TriangleTypeTest
 	public void testSpecificEnumValues()
 	{
 		TriangleType[] onlyValidValues = { TriangleType.EQUILATERAL, TriangleType.ISOSCELES, TriangleType.SCALENE };
-		assertThat("", Arrays.asList(objectUnderTest.values()), containsInAnyOrder(onlyValidValues));
+		assertThat("The enumeration must have only EQUILATERAL, ISOSCELES, or SCALENE!", Arrays.asList(objectUnderTest.values()), containsInAnyOrder(onlyValidValues));
 	}
 }
