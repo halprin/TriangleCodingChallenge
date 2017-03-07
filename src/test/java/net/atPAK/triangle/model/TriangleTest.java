@@ -7,6 +7,8 @@ import org.junit.Test;
  */
 public class TriangleTest
 {
+	private Triangle objectUnderTest;
+
 	@Test
 	public void testCreatingEquilateralTriangle()
 	{
