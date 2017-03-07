@@ -59,31 +59,6 @@ public abstract class Triangle
 		return createCorrectTriangle(side1, side2, side3);
 	}
 
-	private static void validateLengths(final double side1, final double side2, final double side3)
-	{
-		//Triangle Inequality Theorem time!
-		//TODO: implement
-	}
-
-	private static Triangle createCorrectTriangle(final double side1, final double side2, final double side3)
-	{
-		Triangle triangle = new Triangle(side1, side2, side3)
-		{
-			@Override
-			public TriangleType getType()
-			{
-				return null;
-			}
-		};
-
-		if(side1 == side2 && side2 == side3)
-		{
-			triangle = new EquilateralTriangle(side1, side2, side3);
-		}
-
-		return triangle;
-	}
-
 	/**
 	 * @return double The length of the first side of the triangle.
 	 */
@@ -160,5 +135,61 @@ public abstract class Triangle
 					   .append("side2", side2)
 					   .append("side3", side3)
 					   .toString();
+	}
+
+	private static void validateLengths(final double side1, final double side2, final double side3)
+	{
+		//Triangle Inequality Theorem time!
+		//TODO: implement
+	}
+
+	private static Triangle createCorrectTriangle(final double side1, final double side2, final double side3)
+	{
+		//TODO: remove this hack to create a simple triangle
+		Triangle triangle = new Triangle(side1, side2, side3)
+		{
+			@Override
+			public TriangleType getType()
+			{
+				return null;
+			}
+		};
+
+		if(isEquilateral(side1, side2, side3))
+		{
+			//the triangle is equilateral
+			triangle = new EquilateralTriangle(side1, side2, side3);
+		}
+		else if(isIsosceles(side1, side2, side3))
+		{
+			//the triangle is isosceles
+			triangle = triangle;
+		}
+		else if(isScalene(side1, side2, side3))
+		{
+			//the triangle is scalene
+			triangle = triangle;
+		}
+		else
+		{
+			//what?
+		}
+
+		return triangle;
+	}
+
+	private static boolean isEquilateral(final double side1, final double side2, final double side3)
+	{
+		return (side1 == side2 && side2 == side3);
+	}
+
+	private static boolean isIsosceles(final double side1, final double side2, final double side3)
+	{
+		return false;
+	}
+
+	private static boolean isScalene(final double side1, final double side2, final double side3)
+	{
+		return false;
 	}
 }
