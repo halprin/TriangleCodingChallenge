@@ -50,15 +50,6 @@ public class TriangleTest
 	}
 
 	@Test
-	public void testCreatingEquilateralTriangle()
-	{
-		objectUnderTest = Triangle.create(1.5, 1.5, 1.5);
-
-		assertThat("The triangle type must not be null.", objectUnderTest.getType(), is(notNullValue()));
-		assertThat("The triangle type must be " + TriangleType.EQUILATERAL, objectUnderTest.getType(), is(TriangleType.EQUILATERAL));
-	}
-
-	@Test
 	public void testCreatingIsoscelesTriangle()
 	{
 		objectUnderTest = Triangle.create(3, 4, 4);
