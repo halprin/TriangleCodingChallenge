@@ -52,16 +52,6 @@ public class TriangleTest
 
 	@Test
 	@Ignore
-	public void testCreatingIsoscelesTriangle()
-	{
-		objectUnderTest = Triangle.create(3, 4, 4);
-
-		assertThat("The triangle type must not be null.", objectUnderTest.getType(), is(notNullValue()));
-		assertThat("The triangle type must be " + TriangleType.ISOSCELES, objectUnderTest.getType(), is(TriangleType.ISOSCELES));
-	}
-
-	@Test
-	@Ignore
 	public void testCreatingScaleneTriangle()
 	{
 		objectUnderTest = Triangle.create(4, 6, 11);

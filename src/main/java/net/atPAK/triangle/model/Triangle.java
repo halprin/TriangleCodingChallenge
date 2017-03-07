@@ -163,7 +163,7 @@ public abstract class Triangle
 		else if(isIsosceles(side1, side2, side3))
 		{
 			//the triangle is isosceles
-			triangle = triangle;
+			triangle = new IsoscelesTriangle(side1, side2, side3);
 		}
 		else if(isScalene(side1, side2, side3))
 		{
@@ -185,7 +185,11 @@ public abstract class Triangle
 
 	private static boolean isIsosceles(final double side1, final double side2, final double side3)
 	{
-		return false;
+		boolean test1 = (side1 == side2 && side1 != side3);
+		boolean test2 = (side1 == side3 && side1 != side2);
+		boolean test3 = (side2 == side3 && side2 != side1);
+
+		return test1 || test2 || test3;
 	}
 
 	private static boolean isScalene(final double side1, final double side2, final double side3)
