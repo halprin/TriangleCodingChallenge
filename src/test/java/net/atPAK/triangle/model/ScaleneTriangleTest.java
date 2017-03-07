@@ -11,16 +11,31 @@ import static org.hamcrest.core.IsNull.notNullValue;
  */
 public class ScaleneTriangleTest
 {
-	private static final double SIDE1 = 4.0;
-	private static final double SIDE2 = 6.0;
-	private static final double SIDE3 = 11.0;
-
 	@Test
 	public void testCreatingScaleneTriangle()
 	{
-		Triangle objectUnderTest = Triangle.create(SIDE1, SIDE2, SIDE3);
+		final double side1 = 4.0;
+		final double side2 = 6.0;
+		final double side3 = 11.0;
+		Triangle objectUnderTest = Triangle.create(side1, side2, side3);
 
-		assertThat("The triangle type must not be null.", objectUnderTest.getType(), is(notNullValue()));
-		assertThat("The triangle type must be " + TriangleType.SCALENE, objectUnderTest.getType(), is(TriangleType.SCALENE));
+		assertScaleneTriangleType(objectUnderTest);
+	}
+
+	@Test
+	public void testOtherSizeScaleneTriangle()
+	{
+		final double side1 = 6.0;
+		final double side2 = 45.0;
+		final double side3 = 14.0;
+		Triangle objectUnderTest = Triangle.create(side1, side2, side3);
+
+		assertScaleneTriangleType(objectUnderTest);
+	}
+
+	private void assertScaleneTriangleType(Triangle triangle)
+	{
+		assertThat("The triangle type must not be null.", triangle.getType(), is(notNullValue()));
+		assertThat("The triangle type must be " + TriangleType.SCALENE, triangle.getType(), is(TriangleType.SCALENE));
 	}
 }

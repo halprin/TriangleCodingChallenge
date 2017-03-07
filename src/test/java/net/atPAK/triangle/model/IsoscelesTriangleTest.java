@@ -11,15 +11,29 @@ import static org.hamcrest.core.IsNull.notNullValue;
  */
 public class IsoscelesTriangleTest
 {
-	public static final double SIDE1 = 3.0;
-	public static final double SIDE2 = 4.0;
-
 	@Test
 	public void testCreatingIsoscelesTriangle()
 	{
-		Triangle objectUnderTest = Triangle.create(SIDE1, SIDE2, SIDE2);
+		final double side1 = 3.0;
+		final double side2 = 4.0;
+		Triangle objectUnderTest = Triangle.create(side1, side2, side2);
 
-		assertThat("The triangle type must not be null.", objectUnderTest.getType(), is(notNullValue()));
-		assertThat("The triangle type must be " + TriangleType.ISOSCELES, objectUnderTest.getType(), is(TriangleType.ISOSCELES));
+		assertIsoscelesTriangleType(objectUnderTest);
+	}
+
+	@Test
+	public void testOtherSizeIsoscelesTriangle()
+	{
+		final double side1 = 12.0;
+		final double side2 = 8.0;
+		Triangle objectUnderTest = Triangle.create(side1, side2, side2);
+
+		assertIsoscelesTriangleType(objectUnderTest);
+	}
+
+	private void assertIsoscelesTriangleType(Triangle triangle)
+	{
+		assertThat("The triangle type must not be null.", triangle.getType(), is(notNullValue()));
+		assertThat("The triangle type must be " + TriangleType.ISOSCELES, triangle.getType(), is(TriangleType.ISOSCELES));
 	}
 }

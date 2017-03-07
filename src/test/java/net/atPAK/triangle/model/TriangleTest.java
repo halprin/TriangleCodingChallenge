@@ -13,24 +13,22 @@ import static org.hamcrest.core.IsNot.not;
  */
 public class TriangleTest
 {
-	private Triangle objectUnderTest;
-
 	private static final double MINIMUM_DOUBLE_DELTA = 0.000000000000001;
 
 	@Test
 	public void testCreateAnyTriangle()
 	{
-		objectUnderTest = Triangle.create(4.0, 6.0, 11.0);
+		Triangle objectUnderTest = Triangle.create(4.0, 6.0, 11.0);
 
 		assertThat("Side 1 must be 4.0.", objectUnderTest.getSide1(), is(4.0));
-		assertThat("Side 1 must be 6.0.", objectUnderTest.getSide2(), is(6.0));
-		assertThat("Side 1 must be 11.0.", objectUnderTest.getSide3(), is(11.0));
+		assertThat("Side 2 must be 6.0.", objectUnderTest.getSide2(), is(6.0));
+		assertThat("Side 3 must be 11.0.", objectUnderTest.getSide3(), is(11.0));
 	}
 
 	@Test
 	public void testTrianglesEqual()
 	{
-		objectUnderTest = Triangle.create(4.0, 6.0, 11.0);
+		Triangle objectUnderTest = Triangle.create(4.0, 6.0, 11.0);
 		Triangle otherSameTriangleUnderTest = Triangle.create(4.0, 6.0, 11.0);
 		Triangle otherDifferentTriangle = Triangle.create(4 + MINIMUM_DOUBLE_DELTA, 6.0, 11.0);
 
@@ -41,7 +39,7 @@ public class TriangleTest
 	@Test
 	public void testTrianglesHash()
 	{
-		objectUnderTest = Triangle.create(4.0, 6.0, 11.0);
+		Triangle objectUnderTest = Triangle.create(4.0, 6.0, 11.0);
 		Triangle otherSameTriangleUnderTest = Triangle.create(4.0, 6.0, 11.0);
 		Triangle otherDifferentTriangle = Triangle.create(4 + MINIMUM_DOUBLE_DELTA, 6.0, 11.0);
 

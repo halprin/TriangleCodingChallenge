@@ -11,14 +11,27 @@ import static org.hamcrest.core.IsNull.notNullValue;
  */
 public class EquilateralTriangleTest
 {
-	private static final double SIDE = 1.5;
-
 	@Test
 	public void testCreatingEquilateralTriangle()
 	{
-		Triangle objectUnderTest = Triangle.create(SIDE, SIDE, SIDE);
+		final double side = 1.5;
+		Triangle objectUnderTest = Triangle.create(side, side, side);
 
-		assertThat("The triangle type must not be null.", objectUnderTest.getType(), is(notNullValue()));
-		assertThat("The triangle type must be " + TriangleType.EQUILATERAL, objectUnderTest.getType(), is(TriangleType.EQUILATERAL));
+		assertEquilateralTriangleType(objectUnderTest);
+	}
+
+	@Test
+	public void testOtherSizeEquilateralTriangle()
+	{
+		final double side = 26;
+		Triangle objectUnderTest = Triangle.create(side, side, side);
+
+		assertEquilateralTriangleType(objectUnderTest);
+	}
+
+	private void assertEquilateralTriangleType(Triangle triangle)
+	{
+		assertThat("The triangle type must not be null.", triangle.getType(), is(notNullValue()));
+		assertThat("The triangle type must be " + TriangleType.EQUILATERAL, triangle.getType(), is(TriangleType.EQUILATERAL));
 	}
 }
