@@ -145,15 +145,7 @@ public abstract class Triangle
 
 	private static Triangle createCorrectTriangle(final double side1, final double side2, final double side3)
 	{
-		//TODO: remove this hack to create a simple triangle
-		Triangle triangle = new Triangle(side1, side2, side3)
-		{
-			@Override
-			public TriangleType getType()
-			{
-				return null;
-			}
-		};
+		Triangle triangle = null;
 
 		if(isEquilateral(side1, side2, side3))
 		{
@@ -168,7 +160,7 @@ public abstract class Triangle
 		else if(isScalene(side1, side2, side3))
 		{
 			//the triangle is scalene
-			triangle = triangle;
+			triangle = new ScaleneTriangle(side1, side2, side3);
 		}
 		else
 		{
@@ -194,6 +186,6 @@ public abstract class Triangle
 
 	private static boolean isScalene(final double side1, final double side2, final double side3)
 	{
-		return false;
+		return (side1 != side2 && side1 != side3 && side2 != side3);
 	}
 }
