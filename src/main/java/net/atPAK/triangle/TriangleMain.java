@@ -11,7 +11,7 @@ public class TriangleMain
 	{
 		double side1 = 4;
 		double side2 = 6;
-		double side3 = 1;
+		double side3 = 11;
 
 		if(args.length == 3)
 		{

@@ -1,7 +1,6 @@
 package net.atPAK.triangle.model;
 
 import net.atPAK.triangle.exceptions.InvalidTriangleException;
-import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import java.util.Objects;
 
@@ -130,12 +129,13 @@ public abstract class Triangle
 	@Override
 	public String toString()
 	{
-		return new ToStringBuilder(this)
-					   .append("type", getType())
-					   .append("side1", side1)
-					   .append("side2", side2)
-					   .append("side3", side3)
-					   .toString();
+		final StringBuilder sb = new StringBuilder("Triangle{");
+		sb.append("type=").append(getType());
+		sb.append("side1=").append(side1);
+		sb.append(", side2=").append(side2);
+		sb.append(", side3=").append(side3);
+		sb.append('}');
+		return sb.toString();
 	}
 
 	private static void validateLengths(final double side1, final double side2, final double side3)
