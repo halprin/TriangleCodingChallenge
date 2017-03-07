@@ -1,5 +1,7 @@
 package net.atPAK.triangle.model;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import java.util.Objects;
 
 /**
@@ -89,5 +91,16 @@ public abstract class Triangle
 	public int hashCode()
 	{
 		return Objects.hash(side1, side2, side3);
+	}
+
+	@Override
+	public String toString()
+	{
+		return new ToStringBuilder(this)
+					   .append("type", getType())
+					   .append("side1", side1)
+					   .append("side2", side2)
+					   .append("side3", side3)
+					   .toString();
 	}
 }

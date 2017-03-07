@@ -6,6 +6,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.hamcrest.core.IsNot.not;
+import static org.hamcrest.core.IsNull.notNullValue;
 
 /**
  * Created by halprin on 3/7/17.
@@ -51,19 +52,28 @@ public class TriangleTest
 	@Test
 	public void testCreatingEquilateralTriangle()
 	{
-		
+		objectUnderTest = Triangle.create(1.5, 1.5, 1.5);
+
+		assertThat("The triangle type must not be null.", objectUnderTest.getType(), is(notNullValue()));
+		assertThat("The triangle type must be " + TriangleType.EQUILATERAL, objectUnderTest.getType(), is(TriangleType.EQUILATERAL));
 	}
 
 	@Test
 	public void testCreatingIsoscelesTriangle()
 	{
+		objectUnderTest = Triangle.create(3, 4, 4);
 
+		assertThat("The triangle type must not be null.", objectUnderTest.getType(), is(notNullValue()));
+		assertThat("The triangle type must be " + TriangleType.ISOSCELES, objectUnderTest.getType(), is(TriangleType.ISOSCELES));
 	}
 
 	@Test
 	public void testCreatingScaleneTriangle()
 	{
+		objectUnderTest = Triangle.create(4, 6, 11);
 
+		assertThat("The triangle type must not be null.", objectUnderTest.getType(), is(notNullValue()));
+		assertThat("The triangle type must be " + TriangleType.SCALENE, objectUnderTest.getType(), is(TriangleType.SCALENE));
 	}
 
 	@Test
