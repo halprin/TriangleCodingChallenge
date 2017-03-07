@@ -5,4 +5,7 @@ package net.atPAK.triangle.model;
  */
 public enum TriangleType
 {
+	EQUILATERAL,
+	ISOSCELES,
+	SCALENE;
 }
