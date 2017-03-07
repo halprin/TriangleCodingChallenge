@@ -1,5 +1,6 @@
 package net.atPAK.triangle.model;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -50,6 +51,7 @@ public class TriangleTest
 	}
 
 	@Test
+	@Ignore
 	public void testCreatingIsoscelesTriangle()
 	{
 		objectUnderTest = Triangle.create(3, 4, 4);
@@ -59,6 +61,7 @@ public class TriangleTest
 	}
 
 	@Test
+	@Ignore
 	public void testCreatingScaleneTriangle()
 	{
 		objectUnderTest = Triangle.create(4, 6, 11);

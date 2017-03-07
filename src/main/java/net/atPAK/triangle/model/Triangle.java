@@ -52,7 +52,21 @@ public abstract class Triangle
 	 */
 	public static Triangle create(final double side1, final double side2, final double side3)
 	{
-		//TODO: create a dumb triangle for the default case for now
+		//validate that this triangle is valid
+		validateLengths(side1, side2, side3);
+
+		//create and return correct kind of Triangle
+		return createCorrectTriangle(side1, side2, side3);
+	}
+
+	private static void validateLengths(final double side1, final double side2, final double side3)
+	{
+		//Triangle Inequality Theorem time!
+		//TODO: implement
+	}
+
+	private static Triangle createCorrectTriangle(final double side1, final double side2, final double side3)
+	{
 		Triangle triangle = new Triangle(side1, side2, side3)
 		{
 			@Override
@@ -62,7 +76,6 @@ public abstract class Triangle
 			}
 		};
 
-		//TODO: make a dirty algorithm for equilateral
 		if(side1 == side2 && side2 == side3)
 		{
 			triangle = new EquilateralTriangle(side1, side2, side3);
