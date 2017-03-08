@@ -1,5 +1,6 @@
 package net.atPAK.triangle;
 
+import net.atPAK.triangle.exceptions.InvalidTriangleException;
 import net.atPAK.triangle.model.Triangle;
 
 /**
@@ -20,8 +21,18 @@ public class TriangleMain
 			side3 = new Double(args[2]);
 		}
 
-		Triangle triangle = Triangle.create(side1, side2, side3);
+		String triangleType = "";
 
-		System.out.println(triangle);
+		try
+		{
+			Triangle triangle = Triangle.create(side1, side2, side3);
+			triangleType = triangle.getType().toString();
+		}
+		catch(InvalidTriangleException exception)
+		{
+			triangleType = "not a triangle";
+		}
+
+		System.out.println(triangleType);
 	}
 }

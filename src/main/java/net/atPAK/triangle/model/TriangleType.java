@@ -5,7 +5,30 @@ package net.atPAK.triangle.model;
  */
 public enum TriangleType
 {
-	EQUILATERAL,
-	ISOSCELES,
-	SCALENE;
+	EQUILATERAL("equilateral"),
+	ISOSCELES("isosceles"),
+	SCALENE("scalene");
+
+	private String type;
+
+	TriangleType(final String type)
+	{
+		setType(type);
+	}
+
+	private String getType()
+	{
+		return type;
+	}
+
+	private void setType(final String type)
+	{
+		this.type = type;
+	}
+
+	@Override
+	public String toString()
+	{
+		return getType();
+	}
 }
