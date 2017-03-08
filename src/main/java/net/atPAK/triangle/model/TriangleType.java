@@ -1,12 +1,28 @@
 package net.atPAK.triangle.model;
 
 /**
- * Created by halprin on 3/7/17.
+ * The different types of triangles.
+ * <ul>
+ * <li>Equilateral - has the same length for all three sides.</li>
+ * <li>Isosceles - has two sides with the same length with the third being different.</li>
+ * <li>Scalene - has different lengths for all three sides.</li>
+ * </ul>
  */
 public enum TriangleType
 {
+	/**
+	 * Has the same length for all three sides.
+	 */
 	EQUILATERAL("equilateral"),
+
+	/**
+	 * Has two sides with the same length with the third being different.
+	 */
 	ISOSCELES("isosceles"),
+
+	/**
+	 * Has different lengths for all three sides.
+	 */
 	SCALENE("scalene");
 
 	private String type;

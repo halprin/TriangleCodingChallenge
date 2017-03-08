@@ -5,7 +5,7 @@ import net.atPAK.triangle.exceptions.InvalidTriangleException;
 import java.util.Objects;
 
 /**
- * Created by halprin on 3/7/17.
+ * A triangle.  It has three sides and angles that sum to 180&deg;.
  */
 public abstract class Triangle
 {
@@ -14,9 +14,11 @@ public abstract class Triangle
 	private double side3;
 
 	/**
-	 * The default constructor for Triangle.
+	 * The default constructor for {@code Triangle}.
 	 *
-	 * This must not be called, hence it being private.
+	 * This must not be called, hence it being private.  Use {@link #create(double, double, double)}
+	 *
+	 * @see #create(double, double, double)
 	 */
 	private Triangle()
 	{
@@ -24,13 +26,15 @@ public abstract class Triangle
 	}
 
 	/**
-	 * The constructor to create a Triangle.
+	 * Constructs a {@code Triangle}.
 	 *
-	 * This is protected to allow construction of child-classes but not allow others.
+	 * This is protected to allow construction via the
+	 * {@link net.atPAK.triangle.model.Triangle#create(double, double, double)} factory.
 	 *
 	 * @param side1 The length of the first side of the triangle.
 	 * @param side2 The length of the second side of the triangle.
 	 * @param side3 The length of the third side of the triangle.
+	 * @see #create(double, double, double)
 	 */
 	protected Triangle(final double side1, final double side2, final double side3)
 	{
@@ -40,15 +44,16 @@ public abstract class Triangle
 	}
 
 	/**
-	 * The factory method for creating Triangles.
+	 * The factory method for creating {@code Triangle}s.
 	 *
-	 * The factory method for creating a Triangle.  By specifying the sizes of the sides, the correct kind of Triangle will be returned.
-	 * Could throw the exception InvalidTriangleException if invalid lengths are specified.
+	 * By specifying the length of the sides, the correct kind of {@code Triangle} will be returned.
+	 * Could throw the exception {@link net.atPAK.triangle.exceptions.InvalidTriangleException} if invalid lengths are specified.
 	 *
 	 * @param side1 The length of the first side of the triangle.
 	 * @param side2 The length of the second side of the triangle.
 	 * @param side3 The length of the third side of the triangle.
-	 * @return Triangle The triangle given the arguments.
+	 * @return The appropriate type of {@code Triangle} based on the parameters.
+	 * @exception net.atPAK.triangle.exceptions.InvalidTriangleException If invalid lengths are specified.
 	 */
 	public static Triangle create(final double side1, final double side2, final double side3)
 	{
@@ -60,7 +65,9 @@ public abstract class Triangle
 	}
 
 	/**
-	 * @return double The length of the first side of the triangle.
+	 * The length of the first side of the triangle.
+	 *
+	 * @return The length of the first side of the triangle.
 	 */
 	public double getSide1()
 	{
@@ -73,7 +80,9 @@ public abstract class Triangle
 	}
 
 	/**
-	 * @return double The length of the second side of the triangle.
+	 * The length of the second side of the triangle.
+	 *
+	 * @return The length of the second side of the triangle.
 	 */
 	public double getSide2()
 	{
@@ -86,7 +95,9 @@ public abstract class Triangle
 	}
 
 	/**
-	 * @return double The length of the third side of the triangle.
+	 * The length of the third side of the triangle.
+	 *
+	 * @return The length of the third side of the triangle.
 	 */
 	public double getSide3()
 	{
@@ -99,7 +110,9 @@ public abstract class Triangle
 	}
 
 	/**
-	 * @return TriangleType The type of the triangle.
+	 * Returns the type of the triangle
+	 *
+	 * @return Depends on the length of the sides passed to {@link #create(double, double, double)}.
 	 */
 	public abstract TriangleType getType();
 
@@ -126,6 +139,13 @@ public abstract class Triangle
 		return Objects.hash(side1, side2, side3);
 	}
 
+	/**
+	 * Returns a {@link java.lang.String} representation of the {@code Triangle}.
+	 *
+	 * Includes the type and all three sides.
+	 *
+	 * @return A string representation.
+	 */
 	@Override
 	public String toString()
 	{

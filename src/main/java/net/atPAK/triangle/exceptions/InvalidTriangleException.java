@@ -4,7 +4,9 @@ import java.text.MessageFormat;
 import java.util.Objects;
 
 /**
- * Created by halprin on 3/7/17.
+ * Thrown when attempting to create a {@link net.atPAK.triangle.model.Triangle Triangle}.  This means that the specified
+ * sides of the {@link net.atPAK.triangle.model.Triangle Triangle} could not result in a valid triangle.
+ * See {@link net.atPAK.triangle.model.Triangle#create(double, double, double)}.
  */
 public class InvalidTriangleException extends RuntimeException
 {
@@ -14,6 +16,13 @@ public class InvalidTriangleException extends RuntimeException
 	private double side2;
 	private double side3;
 
+	/**
+	 * Constructs an {@code InvalidTriangleException} with the sides of the "triangle" that were invalid.
+	 *
+	 * @param side1 The length of the first side of the "triangle" from the invalid triangle.
+	 * @param side2 The length of the second side of the "triangle" from the invalid triangle.
+	 * @param side3 The length of the third side of the "triangle" from the invalid triangle.
+	 */
 	public InvalidTriangleException(final double side1, final double side2, final double side3)
 	{
 		super(MessageFormat.format(MESSAGE, side1, side2, side3));
@@ -23,7 +32,9 @@ public class InvalidTriangleException extends RuntimeException
 	}
 
 	/**
-	 * @return double The invalid length of the first side of the "triangle".
+	 * The length of the first side of the "triangle".
+	 *
+	 * @return The length of the first side of the "triangle".
 	 */
 	public double getSide1()
 	{
@@ -36,7 +47,9 @@ public class InvalidTriangleException extends RuntimeException
 	}
 
 	/**
-	 * @return double The invalid length of the second side of the "triangle".
+	 * The length of the second side of the "triangle".
+	 *
+	 * @return The length of the second side of the "triangle".
 	 */
 	public double getSide2()
 	{
@@ -49,7 +62,9 @@ public class InvalidTriangleException extends RuntimeException
 	}
 
 	/**
-	 * @return double The invalid length of the third side of the "triangle".
+	 * The length of the third side of the "triangle".
+	 *
+	 * @return The length of the third side of the "triangle".
 	 */
 	public double getSide3()
 	{
