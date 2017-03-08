@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+#get the input
+export triangleSides="$@"
+
+export buildLog="./build.log"
+
+#check if Docker exists
+if ! type docker &> /dev/null; then
+	echo "docker command not found!  Cannot run the project.  Please add Docker to \$PATH or install it first."
+	exit 1
+fi
+
+#build!
+echo "Building first..."
+docker build -t halprin_triangle_coding_challenge . > $buildLog
+
+export buildSuccess=$?
+if [ $buildSuccess -ne 0 ]; then
+	echo "Build failed!  Build log can be found at $buildLog.  Please file an issue on GitHub."
+	exit 2
+fi
+
+#run!
+docker run -it --rm halprin_triangle_coding_challenge $triangleSides
