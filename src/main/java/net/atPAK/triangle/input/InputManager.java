@@ -1,5 +1,6 @@
 package net.atPAK.triangle.input;
 
+import java.text.MessageFormat;
 import java.util.Scanner;
 
 /**
@@ -22,6 +23,7 @@ import java.util.Scanner;
  */
 public class InputManager
 {
+	private static final String PROMPT = "Please supply a number for side {0}: ";
 	private double side1 = 0;
 	private double side2 = 0;
 	private double side3 = 0;
@@ -115,7 +117,7 @@ public class InputManager
 
 	private void promptForNextSide()
 	{
-		System.out.print("Please supply a number for side " + nextSideNumber() + ": ");
+		System.out.print(MessageFormat.format(PROMPT, nextSideNumber()));
 
 		Scanner sideReader = new Scanner(System.in);
 		String nextInput = sideReader.nextLine();
