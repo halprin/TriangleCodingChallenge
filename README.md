@@ -19,7 +19,7 @@ $ wget https://raw.githubusercontent.com/halprin/TriangleCodingChallenge/master/
 $ chmod +x ./runTriangleDocker
 ```
 
-Afterward, you can [execute via Docker](###Docker-Without-Source).
+Afterward, you can [execute via Docker](#docker-without-source).
 
 ###From Source
 You can download the source either using the `Download ZIP` button under the `Clone or download` dropdown menu or using
@@ -30,7 +30,7 @@ $ git clone https://github.com/halprin/TriangleCodingChallenge.git
 $ cd TriangleCodingChallenge
 ```
 
-Afterward, you can execute via [Docker](###Docker-From-Source) or [natively](###Native-From-Source).
+Afterward, you can execute via [Docker](#docker-from-source) or [natively](#native-from-source).
 
 ##Executing
 No matter how you execute the application, you can choose to pass in command line arguments or not.  These arguments are
@@ -44,7 +44,7 @@ valid arguments.
 downloaded first if it has not already.  Therefore, any local changes to source code will not be reflected in the
 execution.
 
-Download the `runTriangleDocker` Bash script as [previously mentioned](###Without-Source) and run it. 
+Download the `runTriangleDocker` Bash script as [previously mentioned](#without-source) and run it. 
 
 ```bash
 $ ./runTriangleDocker 1.5 1.5 1.5
@@ -58,7 +58,7 @@ isosceles
 
 ###Docker From Source
 [Docker](https://www.docker.com/) must be installed.  This method builds and runs an image from the local source code.
-Be sure you downloaded the source code as [previously mentioned](###From-Source) and execute the
+Be sure you downloaded the source code as [previously mentioned](#from-source) and execute the
 `runTriangleDockerSource` Bash script.
 
 ```bash
@@ -73,7 +73,7 @@ isosceles
 
 ###Native From Source
 Java and Maven must be installed and be in the `$PATH`.  This method compiles the application from the local source code
-first if it has not already.  Be sure you downloaded the source code as [previously mentioned](###From-Source) and execute the
+first if it has not already.  Be sure you downloaded the source code as [previously mentioned](#from-source) and execute the
 `runTriangleNative` Bash script.
 
 ```bash
