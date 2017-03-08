@@ -5,15 +5,15 @@ This Java application is a response to the Developer Coding Challenge by Flexion
 There are two methods to install the application: via Docker or from source.
 
 ### Docker
-Download the `runDocker` Bash script.
+Download the `runTriangleDocker` Bash script.
 ```bash
-$ curl https://raw.githubusercontent.com/halprin/TriangleCodingChallenge/master/runDocker > runDocker
-$ chmod +x ./runDocker
+$ curl https://raw.githubusercontent.com/halprin/TriangleCodingChallenge/master/runTriangleDocker > runTriangleDocker
+$ chmod +x ./runTriangleDocker
 ```
 
 ```bash
-$ wget https://raw.githubusercontent.com/halprin/TriangleCodingChallenge/master/runDocker
-$ chmod +x ./runDocker
+$ wget https://raw.githubusercontent.com/halprin/TriangleCodingChallenge/master/runTriangleDocker
+$ chmod +x ./runTriangleDocker
 ```
 
 Afterward, you can execute via Docker.  See Execution, Docker below.
@@ -24,6 +24,9 @@ git directly.
 
 ```bash
 $ git clone https://github.com/halprin/TriangleCodingChallenge.git
+$ cd TriangleCodingChallenge
+$ chmod +x ./runTriangleDocker
+$ chmod +x ./runTriangleNative
 ```
 
 Afterward, you can execute via Docker or natively.  See Execution, Docker or Native, below.
@@ -35,11 +38,17 @@ application will try to parse the next argument.  The user is prompted for addit
 valid arguments.
 
 ### Docker
-[Docker](https://www.docker.com/) must be installed for this method to work.  The benefit here is Java and Maven are not
- required.  The image will be downloaded first if it has not already.
+[Docker](https://www.docker.com/) must be installed for this method to work.  The benefit is Java and Maven are not
+required.  The image will be downloaded first if it has not already.
 
 ```bash
-$ ./runDocker [<length of side> ...]
+$ ./runTriangleDocker 1.5 1.5 1.5
+equilateral
+$ ./runTriangleDocker
+Please supply a number for side 1: 3
+Please supply a number for side 2: 4
+Please supply a number for side 3: 4
+isosceles
 ```
 
 ### Native
@@ -47,5 +56,11 @@ Java and Maven must be installed and be in the `$PATH` for this method to work. 
 has not already.
 
 ```bash
-$ ./runNative [<length of side> ...]
+$ ./runTriangleNative 1.5 1.5 1.5
+equilateral
+$ ./runTriangleNative
+Please supply a number for side 1: 3
+Please supply a number for side 2: 4
+Please supply a number for side 3: 4
+isosceles
 ```
