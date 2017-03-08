@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+#get the input
+export triangleSides="$@"
+
+#check if Docker exists
+if ! type docker &> /dev/null; then
+	echo "docker command not found!  Cannot run the project.  Please add Docker to \$PATH or install it first."
+	exit 1
+fi
+
+#run!
+docker run -it --rm halprin/trianglecodingchallenge $triangleSides

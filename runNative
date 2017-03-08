@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+#get the input
+export triangleSides="$@"
+
+export jarLocation="./target/TriangleCodingChallenge-1.0.0.jar"
+export compilationLog="./compilation.log"
+
+#check if Java exists
+if ! type java &> /dev/null; then
+	echo "java command not found!  Cannot run the project.  Please add Java to \$PATH or install it first."
+	exit 1
+fi
+
+#check if the file has been created
+if ! [ -e $jarLocation ]; then
+	#test that Maven exists
+	if ! type mvn &> /dev/null; then
+		echo "mvn command not found!  Cannot compile the project.  Please add Maven to \$PATH or install it first."
+		exit 2
+	fi
+
+	#compile
+	echo "Compiling first..."
+	mvn clean install > $compilationLog
+
+	#was compilation was successful?
+	export compileSuccess=$?
+	if [ $compileSuccess -ne 0 ]; then
+		echo "Compilation failed!  Compilation log can be found at $compilationLog.  Please file an issue on GitHub."
+		exit 3
+	fi
+fi
+
+#run!
+java -jar $jarLocation $triangleSides
