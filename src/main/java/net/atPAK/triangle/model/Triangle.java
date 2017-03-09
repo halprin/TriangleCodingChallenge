@@ -53,7 +53,7 @@ public abstract class Triangle
 	 * @param side2 The length of the second side of the triangle.
 	 * @param side3 The length of the third side of the triangle.
 	 * @return The appropriate type of {@code Triangle} based on the parameters.
-	 * @exception net.atPAK.triangle.exceptions.InvalidTriangleException If invalid lengths are specified.
+	 * @throws net.atPAK.triangle.exceptions.InvalidTriangleException If invalid lengths are specified.
 	 */
 	public static Triangle create(final double side1, final double side2, final double side3)
 	{

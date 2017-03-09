@@ -127,23 +127,25 @@ public class InputManager
 
 	private String nextSideNumber()
 	{
+		String nextSideNumber = "";
+
 		if(getSide1() == 0)
 		{
 			//side1 needs to be set next
-			return "1";
+			nextSideNumber = "1";
 		}
 		else if(getSide2() == 0)
 		{
 			//side2 needs to be set next
-			return "2";
+			nextSideNumber = "2";
 		}
 		else if(getSide3() == 0)
 		{
 			//side3 needs to be set next
-			return "3";
+			nextSideNumber = "3";
 		}
 
-		return "";
+		return nextSideNumber;
 	}
 
 	private boolean allSidesSet()

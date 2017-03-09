@@ -34,8 +34,10 @@ public class TriangleTest
 		Triangle otherSameTriangleUnderTest = Triangle.create(SIDE1, SIDE2, SIDE3);
 		Triangle otherDifferentTriangle = Triangle.create(SIDE1 + MINIMUM_DOUBLE_DELTA, SIDE2, SIDE3);
 
+		assertThat("The triangle must equal itself.", objectUnderTest, equalTo(objectUnderTest));
 		assertThat("The triangles must equal each other.", objectUnderTest, equalTo(otherSameTriangleUnderTest));
 		assertThat("The triangles must NOT equal each other.", objectUnderTest, not(equalTo(otherDifferentTriangle)));
+		assertThat("The triangle must NOT equal a different object.", objectUnderTest, not(equalTo(new Object())));
 	}
 
 	@Test
