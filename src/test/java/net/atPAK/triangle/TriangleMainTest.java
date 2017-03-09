@@ -15,8 +15,6 @@ import static org.hamcrest.core.Is.is;
 /**
  * Created by halprin on 3/8/17.
  */
-//@RunWith(PowerMockRunner.class)
-//@PrepareForTest(TriangleMain.class)
 public class TriangleMainTest
 {
 	private static String LF = "\n";

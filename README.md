@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/halprin/TriangleCodingChallenge.svg?branch=master)](https://travis-ci.org/halprin/TriangleCodingChallenge)
+
 # TriangleCodingChallenge
 This Java application is a response to the Developer Coding Challenge by Flexion.
 
